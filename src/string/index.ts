@@ -1,3 +1,5 @@
+import { appConstants } from "../constant";
+
 /**
  * throw error if value is not string
  * @param{string} str - string value
@@ -95,7 +97,7 @@ function toUpperCase(str: string): string {
  * @param {Number} n
  * @returns {string} return first n letters of string
  */
-const getFirstLetters = (str: string, n: number) => {
+const getFirstLetters = (str: string, n: number): string => {
   throwErrorIfNotString(str);
   return str.substring(0, n);
 };
@@ -107,9 +109,61 @@ const getFirstLetters = (str: string, n: number) => {
  * @param {number} end - end index
  * @returns {string} return substring
  */
-const getSubString = (str: string, start = 0, end = 0) => {
+const getSubString = (str: string, start = 0, end = 0): string => {
   throwErrorIfNotString(str);
   return str.substring(start, end);
+};
+
+/**
+ * function to get last n letters of a string
+ * @param {string} str - string value
+ * @param {number} n - number of letters
+ * @returns {string} return last n letters of string
+ */
+const getLastLetters = (str: string, n: number): string => {
+  throwErrorIfNotString(str);
+  return str.substring(str.length - n);
+};
+
+/**
+ * function check string start with given string
+ * @param {string} str - string value
+ * @param {string} start  - string starting character
+ * @returns {boolean} return true if string starts with start, false if not
+ */
+const startWith = (str: string, start: string): boolean => {
+  throwErrorIfNotString(str);
+  return str.startsWith(start);
+};
+
+/**
+ * function to check string end with given string
+ * @param {string} str - string value
+ * @param {string} end - string ending character
+ * @returns {boolean} return true if string ends with end, false if not
+ */
+const endWith = (str: string, end: string): boolean => {
+  throwErrorIfNotString(str);
+  return str.endsWith(end);
+};
+
+/**
+ * function to repeat string
+ * @param {string} string - string value
+ * @param {number} n - number of times to repeat
+ * @returns {array} return array of string
+ */
+const times = (string: string, n: number) => {
+  if (n < 1 || n > appConstants.MAX_SAFE_INTEGER) {
+    return [];
+  }
+  let index = -1;
+  const length = Math.min(n, appConstants.MAX_ARRAY_LENGTH);
+  const result = new Array(length);
+  while (++index < length) {
+    result[index] = string;
+  }
+  return result;
 };
 
 export default {
@@ -123,4 +177,8 @@ export default {
   toUpperCase,
   getFirstLetters,
   getSubString,
+  getLastLetters,
+  startWith,
+  endWith,
+  times,
 };
