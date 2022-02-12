@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --config jestconfig.json",
+    "test": "jest --config jestconfig.json --coverage",
     "build": "tsc",
     "lint": "eslint . --ext .ts",
     "prepare": "npm run build",
