@@ -69,6 +69,26 @@ function capitalizeAll(str: string): string {
     : "";
 }
 
+/**
+ * lowercase the entire string
+ * @param {string} str - string value
+ * @returns {string} return lowercase string
+ */
+function toLowerCase(str: string): string {
+  throwErrorIfNotString(str);
+  return isNotEmpty(str) === true ? str.toLowerCase() : "";
+}
+
+/**
+ * upper case the entire string
+ * @param {string} str
+ * @returns {string} return upper case string
+ */
+function toUpperCase(str: string): string {
+  throwErrorIfNotString(str);
+  return isNotEmpty(str) === true ? str.toUpperCase() : "";
+}
+
 export default {
   isString,
   isNotEmpty,
@@ -76,4 +96,6 @@ export default {
   capitalize,
   capitalizeAll,
   throwErrorIfNotString,
+  toLowerCase,
+  toUpperCase,
 };
