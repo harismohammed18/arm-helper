@@ -89,6 +89,17 @@ function toUpperCase(str: string): string {
   return isNotEmpty(str) === true ? str.toUpperCase() : "";
 }
 
+/**
+ * function to get the first n letters of a string
+ * @param {String} str
+ * @param {Number} n
+ * @returns {string} return first n letters of string
+ */
+const getFirstLetters = (str: string, n: number) => {
+  throwErrorIfNotString(str);
+  return str.substring(0, n);
+};
+
 export default {
   isString,
   isNotEmpty,
@@ -98,4 +109,5 @@ export default {
   throwErrorIfNotString,
   toLowerCase,
   toUpperCase,
+  getFirstLetters,
 };

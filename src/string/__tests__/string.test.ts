@@ -54,3 +54,9 @@ test("Test throwErrorIfNotString", () => {
     "Given value is not a string"
   );
 });
+
+test("Test getFirstLetter", () => {
+  expect(stringFunctions.getFirstLetters("John", 10)).toBe("John");
+  expect(stringFunctions.getFirstLetters("John", 1)).toBe("J");
+  expect(stringFunctions.getFirstLetters("John Thomas", 6)).toBe("John T");
+});
