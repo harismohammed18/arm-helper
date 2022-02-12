@@ -1,3 +1,9 @@
+const throwErrorIfNotString = (str: unknown): void => {
+  if (!isString(str)) {
+    throw new Error("given value not a string");
+  }
+};
+
 /**
  * check whether the value is string
  * @param {unknown} str - unknown value
@@ -30,6 +36,35 @@ const isNotEmpty = (str: unknown, doTrim = false): boolean =>
     ? returnValidString(str).trim().length > 0
     : returnValidString(str).length > 0;
 
-export default { isString, isNotEmpty, returnValidString };
+/**
+ * capitalize first letter of string
+ * if not a string throw error
+ * @param {string} str - string value
+ * @returns {string} return capitalized string
+ */
+const capitalize = (str: string): string => {
+  throwErrorIfNotString(str);
+  return isNotEmpty(str) === true
+    ? str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
+    : "";
+};
 
+/**
+ * capitalize first letter of each word in string
+ * @param {string} str - string value
+ * @returns {string} return string with first letter capitalized
+ */
+const capitalizeAll = (str: string): string => {
+  throwErrorIfNotString(str);
+  return isNotEmpty(str) === true
+    ? str.toLowerCase().split(" ").map(capitalize).join(" ")
+    : "";
+};
 
+export default {
+  isString,
+  isNotEmpty,
+  returnValidString,
+  capitalize,
+  capitalizeAll,
+};

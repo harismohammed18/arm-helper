@@ -1,3 +1,2 @@
 import strHelper from "./string";
-
-export default { strHelper };
+export { strHelper };
