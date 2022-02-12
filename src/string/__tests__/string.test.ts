@@ -60,3 +60,8 @@ test("Test getFirstLetter", () => {
   expect(stringFunctions.getFirstLetters("John", 1)).toBe("J");
   expect(stringFunctions.getFirstLetters("John Thomas", 6)).toBe("John T");
 });
+
+test("Test getSubString", () => {
+  expect(stringFunctions.getSubString("John", 1, 3)).toBe("oh");
+  expect(stringFunctions.getSubString("", 1, 3)).toBe("");
+});

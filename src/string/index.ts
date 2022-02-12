@@ -100,6 +100,18 @@ const getFirstLetters = (str: string, n: number) => {
   return str.substring(0, n);
 };
 
+/**
+ * function to get substring
+ * @param {String} str - string value
+ * @param {number} start - start index
+ * @param {number} end - end index
+ * @returns {string} return substring
+ */
+const getSubString = (str: string, start = 0, end = 0) => {
+  throwErrorIfNotString(str);
+  return str.substring(start, end);
+};
+
 export default {
   isString,
   isNotEmpty,
@@ -110,4 +122,5 @@ export default {
   toLowerCase,
   toUpperCase,
   getFirstLetters,
+  getSubString,
 };
