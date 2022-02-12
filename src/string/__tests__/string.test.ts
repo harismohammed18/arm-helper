@@ -41,3 +41,16 @@ test("Test returnValidString", () => {
   expect(stringFunctions.returnValidString(null)).toBe("");
   expect(stringFunctions.returnValidString(undefined)).toBe("");
 });
+
+test("Test throwErrorIfNotString", () => {
+  expect(stringFunctions.throwErrorIfNotString("John")).toBeUndefined();
+  expect(() => stringFunctions.throwErrorIfNotString(123)).toThrowError(
+    "Given value is not a string"
+  );
+  expect(() => stringFunctions.throwErrorIfNotString(null)).toThrowError(
+    "Given value is not a string"
+  );
+  expect(() => stringFunctions.throwErrorIfNotString(undefined)).toThrowError(
+    "Given value is not a string"
+  );
+});
