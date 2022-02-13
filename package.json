@@ -1,7 +1,7 @@
 {
-  "name": "arm-helper",
-  "version": "1.0.0",
-  "description": "",
+  "name": "dev-utilz",
+  "version": "0.0.1",
+  "description": "Module intended to be used by developers to help with development",
   "main": "index.js",
   "scripts": {
     "test": "jest --config jestconfig.json --coverage",
@@ -17,8 +17,8 @@
     "type": "git",
     "url": "git+https://github.com/harismohammed18/arm-helper.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["string-utils", "string-utils-js","string-helper"],
+  "author": "harismohammed18",
   "license": "ISC",
   "files": [
     "lib/**/*"
